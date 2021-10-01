@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Основная страница{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div>
+        <a href="{% url 'test' %}"><h4>Пройти тест</h4></a>
+        <a href="{% url 'filter' %}"><h4>Фильтры по предпочтениям</h4></a>
+    </div>
+{% endblock %}

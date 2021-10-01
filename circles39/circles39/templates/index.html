@@ -3,5 +3,8 @@
 {% block title%}Домашняя страница{% endblock %}
 
 {% block content %}
-    <a href="{% url 'reg' %}"><h1>Регистрация</h1></a>
+    <div>
+        <a href="{% url 'home' %}"><h4>Главная страница</h4></a>
+        <a href="{% url 'testfilter' %}"><h4>Подобрать кружок</h4></a>
+    </div>
 {% endblock %}

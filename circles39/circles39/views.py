@@ -6,3 +6,12 @@ def index(request):
 
 def reg(request):
     return render(request, 'reg.html')
+
+def testfilter(request):
+    return render(request, 'testfilter.html')
+
+def test(request):
+    return render(request, 'test.html')
+
+def filter(request):
+    return render(request, 'filter.html')

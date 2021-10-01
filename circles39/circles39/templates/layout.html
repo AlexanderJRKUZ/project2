@@ -7,19 +7,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
-    <style>
-        a {text-decoration: none;}
-        a:hover {text-decoration: underline;}
-    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'circles39/css/pc.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pc.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://www.w3.org/TR/CSS21/text.html#propdef-text-decoration">
 </head>
 <body>
     <div class="main">
         {% block content %}
-        {% endblock%}
+        {% endblock %}
     </div>
 </body>
 </html>
