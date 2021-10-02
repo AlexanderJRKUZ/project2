@@ -4,6 +4,14 @@
 
 {% block content %}
     <div>
-        
+        {% if signuped != '-' %}
+            <a href="{% url 'logout' %}" class="button">Выйти из аккаунта</a>
+            {% if boolean == 1 %}
+                <a href="{% url 'signup_child' %}"><h4>Регистрация ребёнка</h4></a>
+            {% endif %}
+        {% else %}
+            <a href="{% url 'signup_parent' %}"><h4>Регистрация</h4></a>
+            <a href="{% url 'login' %}"><h4>Войти в аккаунт</h4></a>
+        {% endif %}
     </div>
 {% endblock %}

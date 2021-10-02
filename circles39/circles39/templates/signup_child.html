@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}Регистрация рёбенка{% endblock %}
+
+{% block content %}
+    {% load static %}
+        <form action="sign-up-child" method="post">
+            <label class="input_text" for="login">Имя пользователя: </label>
+            <input id="login" type="text" name="login" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="password">Пароль: </label>
+            <input id="password" type="text" name="password" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="mail">Свидетельство о рождении: </label>
+            <input id="mail" type="text" name="mail" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="OK">
+        </form>
+{% endblock %}
