@@ -1,6 +1,6 @@
 from . import main
 import sqlite3
-from . import add
+from . import add_circle
 import os
 from django.shortcuts import render
 from . import si_child
@@ -22,10 +22,10 @@ def add_post(request):
     mx_money = request.POST.get("mx_money")
     check = request.POST.get("chck")
     lok = request.POST.get("lok")
-    age = (mn_age + mx_age) / 2
-    money = (mn_money + mx_money) / 2
+    age = (int(mn_age) + int(mx_age)) / 2
+    money = (int(mn_money) + int(mx_money)) / 2
 
-    add.add(org, type, age, money, check, lok)
+    add_circle.add(org, type, age, money, check, lok)
 
     return render(request, 'index.html')
 
