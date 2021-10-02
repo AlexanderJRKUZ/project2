@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div>
+        <form action="sign-up" method="post">
+            <label class="input_text" for="login">Имя пользователя: </label>
+            <input id="login" type="text" name="login" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="password">Пароль: </label>
+            <input id="password" type="text" name="password" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="mail">Почта: </label>
+            <input id="mail" type="text" name="mail" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="kod">Код организации (иначе "-"): </label>
+            <input id="kod" type="text" name="kod" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="nomer">Серия и номер пасспорта: </label>
+            <input id="nomer" type="text" name="nomer" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="OK">
+        </form>
+    </div>
+{% endblock %}
