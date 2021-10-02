@@ -5,7 +5,7 @@
 {% block content %}
     <div>
         {% if signuped %}
-            <button>Выйти из аккаунта</button>
+        <a href="{% url 'logout' %}" class="button">Выйти из аккаунта</a>
         {% else %}
             <a href="{% url 'signup' %}"><h4>Регистрация</h4></a>
             <a href="{% url 'login' %}"><h4>Войти в аккаунт</h4></a>
