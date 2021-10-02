@@ -1,5 +1,6 @@
 from . import main
 import sqlite3
+from . import add
 import os
 from django.shortcuts import render
 from . import si_child
@@ -7,6 +8,25 @@ from . import si_parent
 from . import login_func
 
 def index(request):
+    return render(request, 'index.html')
+
+def add(request):
+    return render(request, 'add.html')
+
+def add_post(request):
+    org = request.POST.get("org")
+    type = request.POST.get("type")
+    mn_age = request.POST.get("mn_age")
+    mx_age = request.POST.get("mx_age")
+    mn_money = request.POST.get("mn_money")
+    mx_money = request.POST.get("mx_money")
+    check = request.POST.get("chck")
+    lok = request.POST.get("lok")
+    age = (mn_age + mx_age) / 2
+    money = (mn_money + mx_money) / 2
+
+    add.add(org, type, age, money, check, lok)
+
     return render(request, 'index.html')
 
 def signup(request):
@@ -64,7 +84,7 @@ def log_in(request):
         return render(request, 'index.html')
     main.acnt(login)
 
-    return render(request, 'account.html')
+    return render(request, 'index.html')
 
 def logout(request):
     main.acnt('-')

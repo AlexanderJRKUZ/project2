@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block title%}Добавить кружок{% endblock %}
+
+{% block content %}
+    <div class = 'page4'>
+        <form class="forms" action="add-post" method="post">
+            <label class="input_text" for="org">Организация: </label>
+            <input id="org" type="text" name="org" required>
+            {% csrf_token %}
+            {{ form }}`
+            <br>
+            <label for="type">Типы: </label>
+            <p>
+                <select class="tip.sel" name="type", id="type">
+                <option class="opt">Бебра</option>
+                <option class="opt">Чебурашка</option>
+                <option class="opt">Крокодил Гена</option>
+                <option class="opt">Шапокляк</option>
+                <option class="opt">Крыса Лариса</option>
+               </select>
+            </p>
+            {% csrf_token %}
+            {{ form }}
+            <label class="input_text" for="mn_age">Минимальный возраст: </label>
+            <input id="mn_age" type="number" name="mn_age" min="1" max="16" step="1" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="mx_age">Максимальный возраст: </label>
+            <input id="mx_age" type="number" name="mx_age" min="1" max="16" step="1" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="mn_money">Минимальная стоимость: </label>
+            <input id="mn_money" type="number" name="mn_money" min="0" max="15000" step="100" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="mx_money">Максимальная стоимость: </label>
+            <input id="mx_money" type="number" name="mx_money" min="0" max="15000" step="100" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label for="chck">Сертификат ПФДО</label>
+            <input type="checkbox" id="chck" name="chck">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <label class="input_text" for="lok">Локация</label>
+            <input id="lok" type="text" name="lok" required>
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="OK">
+        </form>
+    </div>
+{% endblock %}
