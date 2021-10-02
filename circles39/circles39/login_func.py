@@ -15,3 +15,4 @@ def lgn(login, password):
     else:
         path('', views.index, name='home')
         return 'xd'
+    main.acnt(login)

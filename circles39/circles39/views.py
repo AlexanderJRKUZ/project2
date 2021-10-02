@@ -42,8 +42,8 @@ def account(request):
         main.signuped = f.read()
     con = sqlite3.connect('mydatabase.db')
     cur = con.cursor()
+    cur.execute('SELECT * FROM accounts WHERE login == ?', [main.signuped])
     r = cur.fetchall()
-    cur.execute('SELECT * FROM accounts WHERE login = ?', [main.signuped])
     if len(r)!=0:
         c = bool(r[0][7])
         print(c)
@@ -62,9 +62,10 @@ def log_in(request):
 
     if login_func.lgn(login, password) == 'xd':
         return render(request, 'index.html')
-    main.acnt(login)
-
-    return render(request, 'account.html')
+    else:
+        with open(os.path.join(os.path.dirname(os.path.dirname(__file__)),'circles39/3.txt'), 'w') as f:
+            f.write(login)
+        return render(request, 'index.html')
 
 def logout(request):
     main.acnt('-')
