@@ -5,7 +5,7 @@
 {% block content %}
     {% load static %}
     <div>
-        <form action="sign-up-parent" method="post">
+        <form class="forms" action="sign-up-parent" method="post">
             <label class="input_text" for="login">Имя пользователя: </label>
             <input id="login" type="text" name="login" required>
             {% csrf_token %}

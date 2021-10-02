@@ -13,6 +13,20 @@
     <link rel="stylesheet" href="https://www.w3.org/TR/CSS21/text.html#propdef-text-decoration">
 </head>
 <body>
+    <div class = 'header'>
+        <div class = 'title'>
+            <a class = 'label'>circles39</a>
+        </div>
+        <div class = 'menu'>
+            <a class = 'menu_block' href = "{% url 'home' %}">Главная</a>
+            <a class = 'menu_block' href = "{% url 'add' %}">Добавить кружок</a>
+            <a class = 'menu_block' href = "{% url 'testfilter' %}">Подобрать кружок</a>
+            <a class = 'menu_block' href = "{% url 'liked' %}">Избранные</a>
+            <a class = 'menu_block' href = "{% url 'contacts' %}">О нас</a>
+            <a class = 'menu_block' href = "{% url 'account' %}">Профиль</a>
+            <a class = 'menu_block'>Выйти</a>
+        </div>
+    </div>
     <div class="main">
         {% block content %}
         {% endblock %}
