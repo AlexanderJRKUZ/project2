@@ -1,5 +1,5 @@
 import sqlite3
-def reg_chld(type, login, password, data, account):
+def reg_chld(login, password, data, account):
     with open('1.txt', 'r') as f:
         c = f.read()
     con = sqlite3.connect('mydatabase.db')

@@ -37,7 +37,6 @@ def account(request):
     }
 
     return render(request, 'account.html', ctx)
-    # return render(request, 'account.html')
 
 def sign_up(request):
     login = request.POST.get("login")
@@ -59,4 +58,8 @@ def log_in(request):
     main.acnt(login)
 
     return render(request, 'index.html')
-    
+
+def logout(request):
+    main.acnt('-')
+
+    return render(request, 'index.html')

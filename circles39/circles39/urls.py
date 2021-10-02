@@ -1,4 +1,4 @@
-from django.conf.urls.static import static
+
 from django.urls import path
 from . import views
 
@@ -7,6 +7,7 @@ urlpatterns = [
     path('liked', views.liked, name='liked'),
     path('contacts', views.contacts, name='contacts'),
     path('account', views.account, name='account'),
+    path('account/logout', views.logout, name='logout'),
     path('account/signup', views.signup, name='signup'),
     path('account/signup/sign-up', views.sign_up),
     path('account/login', views.login, name='login'),
