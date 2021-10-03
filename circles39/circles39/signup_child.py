@@ -10,11 +10,10 @@ def reg_chld(login, password, data, account):
         print('Аккаунт с таким логином уже существует')
     else:
         a = [c, login, password, '-', '-', data, account]
-        con.commit()
+        
         cur.execute('INSERT INTO accounts VALUES (?, ?, ?, ?, ?, ?, ?)', a)
+        con.commit()
         with open('1.txt', 'w') as f:
             xd = str(int(c)+1)
             f.write(xd)
 
-type, login, password, data, account = list(map(str, input().split()))
-reg_chld(type, login, password, data, account)

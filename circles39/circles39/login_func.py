@@ -12,5 +12,3 @@ def lgn(login, password):
             account = login
     else:
         print('Ошибка')
-lg, password = list(map(str, input().split()))
-lgn(lg, password)

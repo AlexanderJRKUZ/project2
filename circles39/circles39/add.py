@@ -14,5 +14,3 @@ def add(name, type, age, price, pfdo, geo):
     with open('2.txt', 'w') as f:
         xd = str(int(cc)+1)
         f.write(xd)
-name, tp, age, price, pfdo, geo = list(map(str, input().split()))
-add(name, tp, age, price, pfdo, geo)
